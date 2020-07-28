@@ -1,0 +1,39 @@
+{% extends 'basic_app/base.html' %}
+{%load staticfiles%}
+{% block content %}
+
+<div class="hero">
+  <div class="overlay_page_title">
+  <p>News</p>
+  </div>
+  <div class="team_cont">
+    <img id="team-hero" src="{% static 'images/image30.jpg' %}">
+  </div>
+  </div>
+<div class="news_post">
+<div class="container fluid">
+  {% for news in news_list %}
+
+    <div class="row">
+      <div class="col-xs-12 col-md-6 col-lg-4">
+        <div class="news_pic_cont">
+          <img class= 'news_list_pic' src="{{ news.photo.url }}" alt="">
+      </div>
+      <br>
+    </div>
+      <div class="col-xs-12 col-md-6 col-lg-8">
+        <div class="title_cont">
+        <h2 class='news_list_title'><a class='news_title' href="{% url 'news_detail' pk=news.pk %}">{{ news.title}}</a></h2>
+        <p>{{ news.date}}</p>
+      </div>
+        </div>
+    </div>
+<br>
+
+
+
+{% endfor %}
+  </div>
+
+</div>
+{% endblock %}

@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+{% load staticfiles %}
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <!-- Bootstrap  -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="{% static 'css/app__cs.css' %}">
+    <!-- Custom fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  </head>
+  <body>
+    <nav class='navbar  navbar-expand-custom navbar-light bg-light fixed-top' id='thenav'>
+        <a class='navbar-brand' id = 'nav_logo' href="{% url 'home' %}"><img id='logo' src="{% static 'images/TransportLarge_Resize.png'%}" class="d-inline-block align-top" alt=""></a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+      <div class="navbar-nav ml-auto">
+        <ul class='navbar-nav ml-auto'>
+          <a class="nav-item nav-link" href='{% url 'team' %}'>TEAM</a>
+          <a class="nav-item nav-link" href="{% url 'properties' %}">PROPERTIES</a>
+          <a class="nav-item nav-link" href="{% url 'news' %}">NEWS</a>
+          <a class="nav-item nav-link" href="{% url 'about' %}">ABOUT US</a>
+          <a class="nav-item nav-link" href="{% url 'contact' %}">CONTACT</a>
+      </ul>
+      </div>
+    </div>
+  </nav>
+
+
+  <!-- <div class="content container"> -->
+
+          {% block content %}
+          {% endblock %}
+
+  <!-- </div> -->
+
+  <div class="footer">
+  <img id = 'foot_img' src="{% static 'images/transport_logo_lg.png'%}" alt="">
+  <div class="foot_txt">
+  <p id='corp'><strong>Corporate Headquarters</strong><p>
+  <p>980 N Michigal Ave.</p>
+  <p>Suite 1280</p>
+  <p>Chicago, IL 60611</p>
+  <br>
+  <p>Phone: (630) 514-9115</p>
+  <br>
+  <a href="https://www.linkedin.com/company/transport-properties"><i id='li' class="fa fa-linkedin-square" style="font-size:24px"></i></a>
+  </div>
+    </div>
+  </body>
+</html>

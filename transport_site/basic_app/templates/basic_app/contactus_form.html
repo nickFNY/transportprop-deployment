@@ -1,0 +1,81 @@
+{% extends 'basic_app/base.html' %}
+{%load staticfiles%}
+{% block content %}
+{% load crispy_forms_tags %}
+
+
+
+<div class="hero">
+  <div class="overlay_page_title">
+  <p>Contact</p>
+  </div>
+  <div class="team_cont">
+    <img id="team-hero" src="{% static 'images/Empty_Lot.jpg' %}">
+  </div>
+  </div>
+
+<div class="contact-info">
+
+  <div class="container amax">
+
+
+<div class="row">
+  <div class="col-6">
+
+
+  <p><strong>Timothy J. McCahill</strong></p>
+  <p>Princial</p>
+  <p>P: (630) 514-9115</p>
+  <p>E: tim@transportprop.com</p>
+  <a href="https://www.linkedin.com/in/timothy-j-mccahill-6a2b1310/"><i id='li' class="fa fa-linkedin-square" style="font-size:24px"></i></a>
+</div>
+<div class="col-6 address">
+
+  <p><strong>Corporate Headquarters</strong><p>
+  <p>980 N Michigal Ave.</p>
+  <p>Suite 1280</p>
+  <p>Chicago, IL 60611</p>
+    <a href="https://www.linkedin.com/company/transport-properties"><i id='li' class="fa fa-linkedin-square" style="font-size:24px"></i></a>
+</div>
+
+  </div>
+  <br>
+  <br>
+  <br>
+  <p><strong>Joe Feeney</strong></p>
+  <p>P: (847) 732-7932</p>
+  <p>E: joe@transportprop.com</p>
+  <a href="https://www.linkedin.com/in/joefeeney/"><i id='li' class="fa fa-linkedin-square" style="font-size:24px"></i></a>
+
+</div>
+</div>
+
+<div class="container">
+<div class="jumbotron contact-form-j">
+<div class="contact-us">
+
+
+<form class="contact-form" method="post">
+  <div class='sm'>
+  <h3>SEND US A MESSAGE</h3>
+    </div>
+  <br>
+    {% csrf_token %}
+  <div class="row">
+    <div class="col-6">
+      {{form.name|as_crispy_field}}
+    </div>
+    <div class="col-6">
+      {{form.email|as_crispy_field}}
+    </div>
+  </div>
+  {{ form.message|as_crispy_field}}
+  <input class='btn btn-success' type="submit" name="" value="Submit">
+  <!-- <button type="submit" class = 'btn btn-success'>Submit</button> -->
+</form>
+</div>
+</div>
+</div>
+
+
+{% endblock %}
